@@ -29,6 +29,7 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
+        // Check conditon if usertype in user table = 'admin'
         if($request->user()->usertype === 'admin')
         {
             return redirect('admin/dashboard');
